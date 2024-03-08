@@ -1,0 +1,36 @@
+{
+    "version": "0.1.0",
+    "isShellCommand": true,
+    "args": [],
+    "showOutput": "always",
+    "echoCommand": true,
+    "suppressTaskName": true,
+    "windows": {
+        "command": "cmd",
+        "args": [
+            "/C",
+            "scala"
+        ]
+    },
+    "linux": {
+        "command": "sh",
+        "args": [
+            "scala"
+        ]
+    },
+    "osx": {
+        "command": "sh",
+        "args": [
+            "scala"
+        ]
+    },
+    "tasks": [
+        {
+            "taskName": "run script",
+            "isBuildCommand": true,
+            "args": [
+                "${file}"
+            ]
+        }
+    ]
+}

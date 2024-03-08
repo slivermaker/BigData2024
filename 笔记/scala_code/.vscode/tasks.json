@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "args": [],
+    "echoCommand": true,
+    "windows": {
+        "command": "cmd",
+        "args": [
+            "/C",
+            "scala"
+        ]
+    },
+    "linux": {
+        "command": "sh",
+        "args": [
+            "scala"
+        ]
+    },
+    "osx": {
+        "command": "sh",
+        "args": [
+            "scala"
+        ]
+    },
+    "tasks": [
+        {
+            "label": "run script",
+            "type": "shell",
+            "args": [
+                "${file}"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "_id": "build",
+                "isDefault": false
+            }
+        }
+    ]
+}

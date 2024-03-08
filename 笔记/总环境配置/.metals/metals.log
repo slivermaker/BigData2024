@@ -1,0 +1,786 @@
+2024.03.01 11:11:42 INFO  Started: Metals version 1.2.2 in folders '/home/silversaya/code/笔记/总环境配置' for client Visual Studio Code 1.87.0.
+11:11:42.758 [pool-1-thread-2] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+11:11:42.762 [pool-1-thread-2] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+11:11:42.762 [pool-1-thread-2] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+11:11:42.765 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+11:11:42.766 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader sun.misc.Launcher$AppClassLoader@5c647e05 ...
+11:11:42.766 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+11:11:42.766 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+11:11:42.766 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader sun.misc.Launcher$AppClassLoader@5c647e05 ...
+11:11:42.766 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/silversaya/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+11:11:42.769 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+11:11:42.769 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+11:11:42.769 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+11:11:42.769 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+11:11:42.769 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+11:11:42.770 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+11:11:42.773 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+11:11:42.773 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+11:11:42.774 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+11:11:42.774 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+11:11:42.774 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+11:11:42.841 [pool-1-thread-2] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/silversaya/code/笔记/总环境配置/.metals/metals (H2 2.2)
+11:11:42.842 [pool-1-thread-2] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+11:11:42.842 [pool-1-thread-2] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+11:11:42.843 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+11:11:42.843 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+11:11:42.847 [pool-1-thread-2] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+11:11:42.848 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+11:11:42.848 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+11:11:42.856 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+11:11:42.860 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+11:11:42.866 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+11:11:42.866 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+11:11:42.866 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+11:11:42.866 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+11:11:42.866 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+11:11:42.867 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+11:11:42.867 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+11:11:42.868 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+11:11:42.868 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+11:11:42.868 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+11:11:42.870 [pool-1-thread-2] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+11:11:42.872 [pool-1-thread-2] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.015s)
+11:11:42.874 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+11:11:42.877 [pool-1-thread-2] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+11:11:42.880 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.parser.Parser -- Parsing  ...
+11:11:42.886 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 1: CREATE TABLE IF NOT EXISTS "PUBLIC"."flyway_schema_history" (
+    "installed_rank" INT NOT NULL,
+    "version" VARCHAR(50),
+    "description" VARCHAR(200) NOT NULL,
+    "type" VARCHAR(20) NOT NULL,
+    "script" VARCHAR(1000) NOT NULL,
+    "checksum" INT,
+    "installed_by" VARCHAR(100) NOT NULL,
+    "installed_on" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "execution_time" INT NOT NULL,
+    "success" BOOLEAN NOT NULL,
+    CONSTRAINT "flyway_schema_history_pk" PRIMARY KEY ("installed_rank")
+) AS SELECT -1, NULL, '<< Flyway Schema History table created >>', 'TABLE', '', NULL, 'SA', CURRENT_TIMESTAMP, 0, TRUE
+11:11:42.887 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 14: CREATE INDEX "PUBLIC"."flyway_schema_history_s_idx" ON "PUBLIC"."flyway_schema_history" ("success")
+11:11:42.887 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: CREATE TABLE IF NOT EXISTS "PUBLIC"."flyway_schema_history" (
+    "installed_rank" INT NOT NULL,
+    "version" VARCHAR(50),
+    "description" VARCHAR(200) NOT NULL,
+    "type" VARCHAR(20) NOT NULL,
+    "script" VARCHAR(1000) NOT NULL,
+    "checksum" INT,
+    "installed_by" VARCHAR(100) NOT NULL,
+    "installed_on" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "execution_time" INT NOT NULL,
+    "success" BOOLEAN NOT NULL,
+    CONSTRAINT "flyway_schema_history_pk" PRIMARY KEY ("installed_rank")
+) AS SELECT -1, NULL, '<< Flyway Schema History table created >>', 'TABLE', '', NULL, 'SA', CURRENT_TIMESTAMP, 0, TRUE
+11:11:42.890 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+11:11:42.891 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: CREATE INDEX "PUBLIC"."flyway_schema_history_s_idx" ON "PUBLIC"."flyway_schema_history" ("success")
+11:11:42.893 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+11:11:42.893 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Created Schema History table "PUBLIC"."flyway_schema_history"
+11:11:42.913 [pool-1-thread-2] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": << Empty Schema >>
+11:11:42.920 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.parser.Parser -- Parsing V1__Create_tables.sql ...
+11:11:42.929 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 4: -- The relationship between library dependency sources under .metals/readonly/**
+-- and build targets they belong to. Required to know what classpath to use
+-- for compiling dependency sources.
+create table dependency_source(
+  text_document_uri varchar primary key,
+  build_target_uri varchar not null
+)
+11:11:42.930 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 12: -- The relationship between library dependency sources under .metals/readonly/**
+-- and worksheets they belong to. Required to know what classpath to use
+-- for compiling dependency sources.
+create table worksheet_dependency_source(
+  text_document_uri varchar primary key,
+  worksheet_uri varchar not null
+)
+11:11:42.930 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 19: -- The relationship between what library dependency sources under .metals/readonly/**
+-- map to which build targets.
+create table sbt_digest(
+  md5 varchar,
+  status tinyint not null,
+  when_recorded timestamp
+)
+11:11:42.931 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 27: -- Which window/showMessage and window/showMessageRequest dialogues have been dismissed
+-- by the user via "Don't show again" or closed by clicking on "x".
+create table dismissed_notification(
+  id int,
+  when_dismissed timestamp,
+  when_expires timestamp
+)
+11:11:42.931 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 34: -- The choice of build tool when multiple build tool files are found in a workspace
+create table chosen_build_tool(
+  build_tool varchar primary key
+)
+11:11:42.932 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Starting migration of schema "PUBLIC" to version "1 - Create tables" ...
+11:11:42.933 [pool-1-thread-2] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "PUBLIC" to version "1 - Create tables"
+11:11:42.934 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- The relationship between library dependency sources under .metals/readonly/**
+-- and build targets they belong to. Required to know what classpath to use
+-- for compiling dependency sources.
+create table dependency_source(
+  text_document_uri varchar primary key,
+  build_target_uri varchar not null
+)
+11:11:42.935 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+11:11:42.935 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- The relationship between library dependency sources under .metals/readonly/**
+-- and worksheets they belong to. Required to know what classpath to use
+-- for compiling dependency sources.
+create table worksheet_dependency_source(
+  text_document_uri varchar primary key,
+  worksheet_uri varchar not null
+)
+11:11:42.936 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+11:11:42.936 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- The relationship between what library dependency sources under .metals/readonly/**
+-- map to which build targets.
+create table sbt_digest(
+  md5 varchar,
+  status tinyint not null,
+  when_recorded timestamp
+)
+11:11:42.936 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+11:11:42.936 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- Which window/showMessage and window/showMessageRequest dialogues have been dismissed
+-- by the user via "Don't show again" or closed by clicking on "x".
+create table dismissed_notification(
+  id int,
+  when_dismissed timestamp,
+  when_expires timestamp
+)
+11:11:42.937 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+11:11:42.937 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- The choice of build tool when multiple build tool files are found in a workspace
+create table chosen_build_tool(
+  build_tool varchar primary key
+)
+11:11:42.938 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+11:11:42.938 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Successfully completed migration of schema "PUBLIC" to version "1 - Create tables"
+11:11:42.940 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema History table "PUBLIC"."flyway_schema_history" successfully updated to reflect changes
+11:11:42.956 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.parser.Parser -- Parsing V2__Server_discovery.sql ...
+11:11:42.959 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 4: -- For each unique combination of installed build servers we select one server.
+-- The md5 checksum is computed from the names of the installed build servers, and
+-- the selected server is the server which the user chose for this workspace.
+create table chosen_build_server(
+  md5 varchar primary key,
+  selected_server varchar,
+  when_recorded timestamp
+)
+11:11:42.960 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Starting migration of schema "PUBLIC" to version "2 - Server discovery" ...
+11:11:42.961 [pool-1-thread-2] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "PUBLIC" to version "2 - Server discovery"
+11:11:42.961 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- For each unique combination of installed build servers we select one server.
+-- The md5 checksum is computed from the names of the installed build servers, and
+-- the selected server is the server which the user chose for this workspace.
+create table chosen_build_server(
+  md5 varchar primary key,
+  selected_server varchar,
+  when_recorded timestamp
+)
+11:11:42.962 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+11:11:42.962 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Successfully completed migration of schema "PUBLIC" to version "2 - Server discovery"
+11:11:42.966 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema History table "PUBLIC"."flyway_schema_history" successfully updated to reflect changes
+11:11:42.969 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.parser.Parser -- Parsing V3__Jar_symbols.sql ...
+11:11:42.970 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 2: -- Indexed jars, the MD5 digest of path, modified time and size as key
+create table indexed_jar(
+  id int auto_increment unique,
+  md5 varchar primary key
+)
+11:11:42.971 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 7: -- Top Level Symbols per jar, allow for multiple jars with same symbols and paths
+create table toplevel_symbol(
+  symbol varchar not null,
+  path varchar not null,
+  jar int,
+  foreign key (jar) references indexed_jar (id) on delete cascade,
+  primary key (jar, path, symbol)
+)
+11:11:42.972 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 15: -- Create index to speedup lookup of jar symbols
+create index toplevel_symbol_jar on toplevel_symbol(jar)
+11:11:42.972 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Starting migration of schema "PUBLIC" to version "3 - Jar symbols" ...
+11:11:42.972 [pool-1-thread-2] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "PUBLIC" to version "3 - Jar symbols"
+11:11:42.973 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- Indexed jars, the MD5 digest of path, modified time and size as key
+create table indexed_jar(
+  id int auto_increment unique,
+  md5 varchar primary key
+)
+11:11:42.977 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+11:11:42.977 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- Top Level Symbols per jar, allow for multiple jars with same symbols and paths
+create table toplevel_symbol(
+  symbol varchar not null,
+  path varchar not null,
+  jar int,
+  foreign key (jar) references indexed_jar (id) on delete cascade,
+  primary key (jar, path, symbol)
+)
+11:11:42.985 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+11:11:42.986 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- Create index to speedup lookup of jar symbols
+create index toplevel_symbol_jar on toplevel_symbol(jar)
+11:11:42.987 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+11:11:42.987 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Successfully completed migration of schema "PUBLIC" to version "3 - Jar symbols"
+11:11:42.989 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema History table "PUBLIC"."flyway_schema_history" successfully updated to reflect changes
+11:11:42.992 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.parser.Parser -- Parsing V4__Fingerprints.sql ...
+11:11:42.994 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 2: -- Fingerprints saved between invocations
+create table fingerprints(
+  path varchar not null,
+  text varchar not null,
+  md5 varchar not null,
+  id int auto_increment unique
+)
+11:11:42.995 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Starting migration of schema "PUBLIC" to version "4 - Fingerprints" ...
+11:11:42.995 [pool-1-thread-2] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "PUBLIC" to version "4 - Fingerprints"
+11:11:42.996 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- Fingerprints saved between invocations
+create table fingerprints(
+  path varchar not null,
+  text varchar not null,
+  md5 varchar not null,
+  id int auto_increment unique
+)
+11:11:42.999 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+11:11:42.999 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Successfully completed migration of schema "PUBLIC" to version "4 - Fingerprints"
+11:11:43.013 [pool-1-thread-2] DEBUG org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema History table "PUBLIC"."flyway_schema_history" successfully updated to reflect changes
+11:11:43.022 [pool-1-thread-2] INFO org.flywaydb.core.internal.command.DbMigrate -- Successfully applied 4 migrations to schema "PUBLIC", now at version v4 (execution time 00:00.026s)
+11:11:43.045 [pool-1-thread-2] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 66 of 135M
+2024.03.01 11:11:43 WARN  scala-cli >= 0.1.3 not found in PATH, fetching and starting a JVM-based Scala CLI
+三月 01, 2024 11:11:52 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 1
+2024.03.01 11:12:14 WARN  no build target for: /home/silversaya/code/笔记/总环境配置/test.scala
+2024.03.01 11:12:22 INFO  Found Java version 1. Scala CLI requires at least Java 17, getting a temurin:17 JVM via coursier-jvm.
+2024.03.01 11:12:22 INFO  no build target found for /home/silversaya/code/笔记/总环境配置/test.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.01 11:12:42 ERROR Unexpected error initializing server: 
+java.lang.Exception: Error while getting https://github.com/coursier/jvm-index/raw/master/index.json: download error: Caught java.net.SocketException (Connection reset) while downloading https://github.com/coursier/jvm-index/raw/master/index.json
+	at coursierapi.shaded.coursier.jvm.JvmIndex$.$anonfun$load$5(JvmIndex.scala:142)
+	at coursierapi.shaded.coursier.jvm.JvmIndex$.$anonfun$load$5$adapted(JvmIndex.scala:140)
+	at coursierapi.shaded.coursier.util.Task$.$anonfun$flatMap$extension$1(Task.scala:14)
+	at coursierapi.shaded.coursier.util.Task$.$anonfun$flatMap$extension$1$adapted(Task.scala:14)
+	at coursierapi.shaded.coursier.util.Task$.wrap(Task.scala:82)
+	at coursierapi.shaded.coursier.util.Task$.$anonfun$flatMap$2(Task.scala:14)
+	at coursierapi.shaded.scala.concurrent.impl.Promise$Transformation.run(Promise.scala:470)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2024.03.01 16:57:17 INFO  Shutting down server
+2024.03.01 16:57:17 INFO  shutting down Metals
+2024.03.01 16:57:17 INFO  Exiting server
+2024.03.02 08:52:44 INFO  Started: Metals version 1.2.2 in folders '/home/silversaya/code/笔记/总环境配置' for client Visual Studio Code 1.87.0.
+08:52:45.217 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+08:52:45.221 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+08:52:45.221 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+08:52:45.225 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+08:52:45.226 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader sun.misc.Launcher$AppClassLoader@5c647e05 ...
+08:52:45.226 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+08:52:45.226 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+08:52:45.226 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader sun.misc.Launcher$AppClassLoader@5c647e05 ...
+08:52:45.226 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/silversaya/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+08:52:45.229 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+08:52:45.229 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+08:52:45.229 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+08:52:45.229 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+08:52:45.229 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+08:52:45.229 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+08:52:45.233 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:52:45.233 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+08:52:45.234 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+08:52:45.234 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+08:52:45.234 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+08:52:45.308 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/silversaya/code/笔记/总环境配置/.metals/metals (H2 2.2)
+08:52:45.309 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+08:52:45.309 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+08:52:45.310 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+08:52:45.310 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+08:52:45.318 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+08:52:45.319 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+08:52:45.319 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:52:45.327 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+08:52:45.332 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:52:45.340 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:52:45.340 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+08:52:45.340 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+08:52:45.340 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+08:52:45.340 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+08:52:45.341 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:52:45.341 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+08:52:45.341 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+08:52:45.341 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+08:52:45.341 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+08:52:45.356 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.027s)
+08:52:45.358 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+08:52:45.363 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+08:52:45.368 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+08:52:45.573 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 43 of 140M
+2024.03.02 08:52:47 WARN  scala-cli >= 0.1.3 not found in PATH, fetching and starting a JVM-based Scala CLI
+2024.03.02 08:52:48 INFO  Found Java version 1. Scala CLI requires at least Java 17, getting a temurin:17 JVM via coursier-jvm.
+2024.03.02 08:52:48 ERROR Unexpected error initializing server: 
+coursierapi.shaded.coursier.cache.ArtifactError$DownloadError: download error: Caught java.net.UnknownHostException (github.com) while downloading https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17%2B35/OpenJDK17-jdk_x64_linux_hotspot_17_35.tar.gz
+	at coursierapi.shaded.coursier.cache.internal.Downloader$.helper$2(Downloader.scala:793)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$.coursier$cache$internal$Downloader$$downloading(Downloader.scala:806)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$Blocking$.remote(Downloader.scala:415)
+	at coursierapi.shaded.coursier.cache.internal.Downloader.$anonfun$remote$6(Downloader.scala:533)
+	at coursierapi.shaded.scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at coursierapi.shaded.scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.UnknownHostException: github.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:673)
+	at sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:173)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:367)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:347)
+	at coursierapi.shaded.coursier.cache.CacheUrl$.redirectTo(CacheUrl.scala:179)
+	at coursierapi.shaded.coursier.cache.CacheUrl$.redirect(CacheUrl.scala:194)
+	at coursierapi.shaded.coursier.cache.CacheUrl$.urlConnectionMaybePartial(CacheUrl.scala:350)
+	at coursierapi.shaded.coursier.cache.ConnectionBuilder.connectionMaybePartial(ConnectionBuilder.scala:50)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$Blocking$.doDownload(Downloader.scala:222)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$Blocking$.$anonfun$remote$2(Downloader.scala:410)
+	at coursierapi.shaded.coursier.cache.CacheLocks$.loop$1(CacheLocks.scala:73)
+	at coursierapi.shaded.coursier.cache.CacheLocks$.withLockOr(CacheLocks.scala:93)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$Blocking$.$anonfun$remote$1(Downloader.scala:413)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$.$anonfun$downloading$1(Downloader.scala:764)
+	at coursierapi.shaded.coursier.cache.CacheLocks$.withUrlLock(CacheLocks.scala:112)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$.helper$2(Downloader.scala:764)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$.coursier$cache$internal$Downloader$$downloading(Downloader.scala:806)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$Blocking$.remote(Downloader.scala:415)
+	at coursierapi.shaded.coursier.cache.internal.Downloader.$anonfun$remote$6(Downloader.scala:533)
+	at coursierapi.shaded.scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at coursierapi.shaded.scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2024.03.02 08:52:50 INFO  no build target found for /home/silversaya/code/笔记/总环境配置/test.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.02 08:52:51 WARN  Could not find semantic tokens for: file:///home/silversaya/code/%E7%AC%94%E8%AE%B0/%E6%80%BB%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/test.scala
+2024.03.02 08:53:13 INFO  Shutting down server
+2024.03.02 08:53:13 INFO  shutting down Metals
+2024.03.02 08:53:13 INFO  Exiting server
+2024.03.02 08:53:43 INFO  Started: Metals version 1.2.2 in folders '/home/silversaya/code/笔记/总环境配置' for client Visual Studio Code 1.87.0.
+08:53:44.022 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+08:53:44.026 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+08:53:44.026 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+08:53:44.029 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+08:53:44.029 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader sun.misc.Launcher$AppClassLoader@5c647e05 ...
+08:53:44.029 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+08:53:44.029 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+08:53:44.029 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader sun.misc.Launcher$AppClassLoader@5c647e05 ...
+08:53:44.029 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/silversaya/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+08:53:44.033 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+08:53:44.033 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+08:53:44.033 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+08:53:44.033 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+08:53:44.033 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+08:53:44.033 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+08:53:44.037 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:53:44.037 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+08:53:44.038 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+08:53:44.038 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+08:53:44.038 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+08:53:44.115 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/silversaya/code/笔记/总环境配置/.metals/metals (H2 2.2)
+08:53:44.116 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+08:53:44.116 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+08:53:44.117 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+08:53:44.117 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+08:53:44.121 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+08:53:44.122 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+08:53:44.122 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:53:44.130 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+08:53:44.134 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:53:44.140 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:53:44.141 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+08:53:44.141 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+08:53:44.141 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+08:53:44.141 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+08:53:44.141 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:53:44.142 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+08:53:44.142 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+08:53:44.142 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+08:53:44.142 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+08:53:44.155 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.024s)
+08:53:44.157 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+08:53:44.163 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+08:53:44.166 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+08:53:44.377 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 95 of 173M
+2024.03.02 08:53:45 WARN  scala-cli >= 0.1.3 not found in PATH, fetching and starting a JVM-based Scala CLI
+2024.03.02 08:53:46 INFO  Found Java version 1. Scala CLI requires at least Java 17, getting a temurin:17 JVM via coursier-jvm.
+2024.03.02 08:53:47 ERROR Unexpected error initializing server: 
+coursierapi.shaded.coursier.cache.ArtifactError$DownloadError: download error: Caught java.net.UnknownHostException (github.com) while downloading https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17%2B35/OpenJDK17-jdk_x64_linux_hotspot_17_35.tar.gz
+	at coursierapi.shaded.coursier.cache.internal.Downloader$.helper$2(Downloader.scala:793)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$.coursier$cache$internal$Downloader$$downloading(Downloader.scala:806)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$Blocking$.remote(Downloader.scala:415)
+	at coursierapi.shaded.coursier.cache.internal.Downloader.$anonfun$remote$6(Downloader.scala:533)
+	at coursierapi.shaded.scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at coursierapi.shaded.scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.UnknownHostException: github.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:673)
+	at sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:173)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:367)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:347)
+	at coursierapi.shaded.coursier.cache.CacheUrl$.redirectTo(CacheUrl.scala:179)
+	at coursierapi.shaded.coursier.cache.CacheUrl$.redirect(CacheUrl.scala:194)
+	at coursierapi.shaded.coursier.cache.CacheUrl$.urlConnectionMaybePartial(CacheUrl.scala:350)
+	at coursierapi.shaded.coursier.cache.ConnectionBuilder.connectionMaybePartial(ConnectionBuilder.scala:50)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$Blocking$.doDownload(Downloader.scala:222)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$Blocking$.$anonfun$remote$2(Downloader.scala:410)
+	at coursierapi.shaded.coursier.cache.CacheLocks$.loop$1(CacheLocks.scala:73)
+	at coursierapi.shaded.coursier.cache.CacheLocks$.withLockOr(CacheLocks.scala:93)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$Blocking$.$anonfun$remote$1(Downloader.scala:413)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$.$anonfun$downloading$1(Downloader.scala:764)
+	at coursierapi.shaded.coursier.cache.CacheLocks$.withUrlLock(CacheLocks.scala:112)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$.helper$2(Downloader.scala:764)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$.coursier$cache$internal$Downloader$$downloading(Downloader.scala:806)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$Blocking$.remote(Downloader.scala:415)
+	at coursierapi.shaded.coursier.cache.internal.Downloader.$anonfun$remote$6(Downloader.scala:533)
+	at coursierapi.shaded.scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at coursierapi.shaded.scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2024.03.02 08:53:47 INFO  no build target found for /home/silversaya/code/笔记/总环境配置/test.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.02 08:54:16 INFO  Shutting down server
+2024.03.02 08:54:16 INFO  shutting down Metals
+2024.03.02 08:54:16 INFO  Exiting server
+2024.03.02 08:54:25 INFO  Started: Metals version 1.2.2 in folders '/home/silversaya/code/笔记/总环境配置' for client Visual Studio Code 1.87.0.
+08:54:26.595 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+08:54:26.602 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+08:54:26.602 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+08:54:26.606 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+08:54:26.606 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader sun.misc.Launcher$AppClassLoader@5c647e05 ...
+08:54:26.606 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+08:54:26.606 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+08:54:26.606 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader sun.misc.Launcher$AppClassLoader@5c647e05 ...
+08:54:26.606 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/silversaya/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+08:54:26.611 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+08:54:26.612 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+08:54:26.612 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+08:54:26.612 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+08:54:26.612 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+08:54:26.612 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+08:54:26.619 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:54:26.619 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+08:54:26.620 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+08:54:26.620 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+08:54:26.620 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+08:54:26.739 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/silversaya/code/笔记/总环境配置/.metals/metals (H2 2.2)
+08:54:26.739 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+08:54:26.739 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+08:54:26.741 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+08:54:26.741 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+08:54:26.766 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+08:54:26.770 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+08:54:26.771 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:54:26.794 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+08:54:26.807 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:54:26.821 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:54:26.821 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+08:54:26.821 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+08:54:26.821 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+08:54:26.821 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+08:54:26.823 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+08:54:26.823 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+08:54:26.823 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+08:54:26.823 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+08:54:26.823 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+08:54:26.841 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.042s)
+08:54:26.844 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+08:54:26.854 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+08:54:26.860 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+08:54:27.074 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 93 of 175M
+2024.03.02 08:54:28 WARN  scala-cli >= 0.1.3 not found in PATH, fetching and starting a JVM-based Scala CLI
+2024.03.02 08:54:29 INFO  Found Java version 1. Scala CLI requires at least Java 17, getting a temurin:17 JVM via coursier-jvm.
+2024.03.02 08:54:30 ERROR Unexpected error initializing server: 
+coursierapi.shaded.coursier.cache.ArtifactError$DownloadError: download error: Caught java.net.UnknownHostException (github.com) while downloading https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17%2B35/OpenJDK17-jdk_x64_linux_hotspot_17_35.tar.gz
+	at coursierapi.shaded.coursier.cache.internal.Downloader$.helper$2(Downloader.scala:793)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$.coursier$cache$internal$Downloader$$downloading(Downloader.scala:806)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$Blocking$.remote(Downloader.scala:415)
+	at coursierapi.shaded.coursier.cache.internal.Downloader.$anonfun$remote$6(Downloader.scala:533)
+	at coursierapi.shaded.scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at coursierapi.shaded.scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.UnknownHostException: github.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:673)
+	at sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:173)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:367)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:347)
+	at coursierapi.shaded.coursier.cache.CacheUrl$.redirectTo(CacheUrl.scala:179)
+	at coursierapi.shaded.coursier.cache.CacheUrl$.redirect(CacheUrl.scala:194)
+	at coursierapi.shaded.coursier.cache.CacheUrl$.urlConnectionMaybePartial(CacheUrl.scala:350)
+	at coursierapi.shaded.coursier.cache.ConnectionBuilder.connectionMaybePartial(ConnectionBuilder.scala:50)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$Blocking$.doDownload(Downloader.scala:222)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$Blocking$.$anonfun$remote$2(Downloader.scala:410)
+	at coursierapi.shaded.coursier.cache.CacheLocks$.loop$1(CacheLocks.scala:73)
+	at coursierapi.shaded.coursier.cache.CacheLocks$.withLockOr(CacheLocks.scala:93)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$Blocking$.$anonfun$remote$1(Downloader.scala:413)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$.$anonfun$downloading$1(Downloader.scala:764)
+	at coursierapi.shaded.coursier.cache.CacheLocks$.withUrlLock(CacheLocks.scala:112)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$.helper$2(Downloader.scala:764)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$.coursier$cache$internal$Downloader$$downloading(Downloader.scala:806)
+	at coursierapi.shaded.coursier.cache.internal.Downloader$Blocking$.remote(Downloader.scala:415)
+	at coursierapi.shaded.coursier.cache.internal.Downloader.$anonfun$remote$6(Downloader.scala:533)
+	at coursierapi.shaded.scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at coursierapi.shaded.scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2024.03.02 08:54:31 INFO  no build target found for /home/silversaya/code/笔记/总环境配置/test.scala. Using presentation compiler with project's scala-library version: 3.3.1
+三月 02, 2024 8:56:54 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_08-56-54-229.md
+Exception in thread "pool-1-thread-20" java.lang.NoClassDefFoundError: com/sun/source/tree/Tree
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:48)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:45)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$foldingRange$3(MetalsLspService.scala:1684)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassNotFoundException: com.sun.source.tree.Tree
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 9 more
+三月 02, 2024 8:56:54 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 16
+三月 02, 2024 8:56:56 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_08-56-56-226.md
+Exception in thread "pool-1-thread-15" java.lang.NoClassDefFoundError: com/sun/source/tree/Tree
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:48)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:45)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$foldingRange$3(MetalsLspService.scala:1684)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassNotFoundException: com.sun.source.tree.Tree
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 9 more
+三月 02, 2024 8:57:18 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_08-57-18-028.md
+2024.03.02 08:57:18 ERROR Can't run javac on /home/silversaya/code/笔记/总环境配置/test.java with options: [-cp
+/home/silversaya/.cache/coursier/v1/https/repo1.maven.org/maven2/com/sourcegraph/semanticdb-javac/0.9.9/semanticdb-javac-0.9.9.jar
+-d
+/tmp/metals-javac-semanticdb8209279659632395647/target
+-Xplugin:semanticdb -sourceroot:/home/silversaya/code/笔记/总环境配置 -targetroot:/tmp/metals-javac-semanticdb8209279659632395647/target]
+java.lang.NoClassDefFoundError: com/sun/source/util/JavacTask
+	at scala.meta.internal.pc.JavaMetalsGlobal$.classpathCompilationTask(JavaMetalsGlobal.scala:80)
+	at scala.meta.internal.metals.JavaInteractiveSemanticdb.textDocument(JavaInteractiveSemanticdb.scala:78)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$compile$2(InteractiveSemanticdbs.scala:140)
+	at scala.Option.fold(Option.scala:263)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.compile(InteractiveSemanticdbs.scala:140)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$5(InteractiveSemanticdbs.scala:101)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$3(InteractiveSemanticdbs.scala:101)
+	at java.util.HashMap.compute(HashMap.java:1197)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2682)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:91)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:54)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:19)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$documentHighlights$1(MetalsLspService.scala:1447)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassNotFoundException: com.sun.source.util.JavacTask
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at scala.meta.internal.pc.JavaMetalsGlobal$.classpathCompilationTask(JavaMetalsGlobal.scala:80)
+	at scala.meta.internal.metals.JavaInteractiveSemanticdb.textDocument(JavaInteractiveSemanticdb.scala:78)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$compile$2(InteractiveSemanticdbs.scala:140)
+	at scala.Option.fold(Option.scala:263)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.compile(InteractiveSemanticdbs.scala:140)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$5(InteractiveSemanticdbs.scala:101)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$3(InteractiveSemanticdbs.scala:101)
+	at java.util.HashMap.compute(HashMap.java:1197)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2682)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:91)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:54)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:19)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$documentHighlights$1(MetalsLspService.scala:1447)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2024.03.02 08:57:18 WARN  Running javac-semanticdb failed for file:///home/silversaya/code/%E7%AC%94%E8%AE%B0/%E6%80%BB%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/test.java. Output:
+
+三月 02, 2024 8:57:18 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_08-57-18-902.md
+三月 02, 2024 8:57:19 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_08-57-19-513.md
+三月 02, 2024 8:57:19 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_08-57-19-821.md
+三月 02, 2024 8:58:44 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_08-58-44-705.md
+Exception in thread "pool-1-thread-31" java.lang.NoClassDefFoundError: com/sun/source/tree/Tree
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:48)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:45)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$foldingRange$3(MetalsLspService.scala:1684)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassNotFoundException: com.sun.source.tree.Tree
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 9 more
+三月 02, 2024 8:59:16 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_08-59-16-944.md
+三月 02, 2024 8:59:31 上午 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+信息: Unsupported notification method: $/setTrace
+Exception in thread "pool-1-thread-35" java.lang.NoClassDefFoundError: com/sun/source/tree/Tree
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:48)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:45)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$foldingRange$3(MetalsLspService.scala:1684)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassNotFoundException: com.sun.source.tree.Tree
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 9 more
+三月 02, 2024 8:59:37 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_08-59-37-858.md
+2024.03.02 09:01:54 WARN  no build target for: /home/silversaya/code/笔记/总环境配置/test.java
+三月 02, 2024 9:01:54 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_09-01-54-686.md
+Exception in thread "pool-1-thread-56" java.lang.NoClassDefFoundError: com/sun/source/tree/Tree
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:48)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:45)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$foldingRange$3(MetalsLspService.scala:1684)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassNotFoundException: com.sun.source.tree.Tree
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 9 more
+三月 02, 2024 9:03:58 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_09-03-58-470.md
+三月 02, 2024 9:03:59 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_09-03-59-690.md
+三月 02, 2024 9:04:01 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_09-04-01-896.md
+Exception in thread "pool-1-thread-59" java.lang.NoClassDefFoundError: com/sun/source/tree/Tree
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:48)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:45)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$foldingRange$3(MetalsLspService.scala:1684)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassNotFoundException: com.sun.source.tree.Tree
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 9 more
+三月 02, 2024 9:04:05 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_09-04-05-415.md
+2024.03.02 09:04:05 WARN  no build target for: /home/silversaya/code/笔记/总环境配置/test.java
+2024.03.02 09:04:05 ERROR Can't run javac on /home/silversaya/code/笔记/总环境配置/test.java with options: [-cp
+/home/silversaya/.cache/coursier/v1/https/repo1.maven.org/maven2/com/sourcegraph/semanticdb-javac/0.9.9/semanticdb-javac-0.9.9.jar
+-d
+/tmp/metals-javac-semanticdb2177631166769371106/target
+-Xplugin:semanticdb -sourceroot:/home/silversaya/code/笔记/总环境配置 -targetroot:/tmp/metals-javac-semanticdb2177631166769371106/target]
+java.lang.NoClassDefFoundError: com/sun/source/util/JavacTask
+	at scala.meta.internal.pc.JavaMetalsGlobal$.classpathCompilationTask(JavaMetalsGlobal.scala:80)
+	at scala.meta.internal.metals.JavaInteractiveSemanticdb.textDocument(JavaInteractiveSemanticdb.scala:78)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$compile$2(InteractiveSemanticdbs.scala:140)
+	at scala.Option.fold(Option.scala:263)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.compile(InteractiveSemanticdbs.scala:140)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$5(InteractiveSemanticdbs.scala:101)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$3(InteractiveSemanticdbs.scala:101)
+	at java.util.HashMap.compute(HashMap.java:1197)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2682)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:91)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:54)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$onChange$4(MetalsLspService.scala:1379)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2024.03.02 09:04:05 WARN  Running javac-semanticdb failed for file:///home/silversaya/code/%E7%AC%94%E8%AE%B0/%E6%80%BB%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/test.java. Output:
+
+三月 02, 2024 9:04:06 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_09-04-06-003.md
+三月 02, 2024 9:04:06 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_09-04-06-882.md
+三月 02, 2024 9:04:07 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_09-04-07-147.md
+三月 02, 2024 9:04:08 上午 scala.meta.internal.pc.CompilerAccess handleError
+严重: A severe compiler error occurred, full details of the error can be found in the error report /home/silversaya/code/笔记/总环境配置/.metals/.reports/metals-full/2024-03-02/r_compiler-error_09-04-08-125.md
