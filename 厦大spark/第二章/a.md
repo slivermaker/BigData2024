@@ -221,7 +221,7 @@ val intList = 1::2::3::Nil与val intList = List(1,2,3)等效
 Vetor可以实现所有访问操作都是常数时间。
 +： 和 :+ 是Seq的方法，执行后vector本身没变
 
-```
+```shell
 scala> val vec1=Vector(1,2)
 vec1: scala.collection.immutable.Vector[Int] = Vector(1, 2, 3)
 scala> val vec2 = 3 +: 4 +: vec1
@@ -453,7 +453,7 @@ ArrayBuffer(16, 28, 10, 16, 28, 1, 34, 47, 55, 16, 28)
 
 可变数组与不可变数组相互转换
 
-```
+```scala
 val arr: ArrayBuffer[Int] = ArrayBuffer(9, 10, 22)
 val newarr = arr.toArray
 println(arr.mkString(", "))
@@ -530,7 +530,7 @@ array.foreach(_.foreach(println))
 
 遍历列表：同ArrayBuffer，父特质有toString方法，可以直接println输出；foreach方法在List中也同样支持。
 
-```
+```scala
 val list1 = List[Any](2, 3, 4)
 println(list1)
 list1.foreach(println)
@@ -591,7 +591,7 @@ println(university("XMU"))
 val xmu = if (university.contains("XMU")) university("XMU") else 0
 ```
 下面是可变映射
-```
+```scala
 import scala.collection.mutable.Map
 val university2 = Map("XMU" -> "Xiamen University", "THU" -> "Tsinghua University","PKU"->"Peking University")
 university2("XMU") = "Ximan University" //更新已有元素的值
@@ -732,7 +732,7 @@ def apply(key: K): V = get(key) match {
 
 不可变Map操作示例代码如下：
 
-```
+```scala
 // 创建集合
 val map1 = Map.apply(16 -> "Ramsey", 7 -> "Saka", 10 -> "Rowe")
 println(map1)
@@ -776,7 +776,7 @@ Map(16 -> Ramsey, 7 -> Saka, 10 -> Rowe)
 
 可变Map的底层实际上是一个HashMap，操作和其它集合大同小异，直接看代码
 
-```
+```scala
 // 创建集合
 val map1 = mutable.Map(16 -> "Ramsey", 7 -> "Saka", 10 -> "Rowe")
 ​
@@ -824,7 +824,7 @@ put 方法底层也是 update 方法；合并集合时若有重复 KEY 的元素
 
 元组用小括号声明，逗号分隔各元素；可以用下划线加序号访问元组中每一个元素，也可以使用元组引入的特质中实现的迭代器去访问每个元素；每一个TupleX都重写了toString方法。
 
-```
+```scala
 // 1. 创建元组
 val tuple: (String, Int, Char, Boolean) = ("ssss", 22, 'j', true)
 println(tuple)
@@ -863,7 +863,7 @@ true
 
 可变的Queue是一个普通的类，可以直接用new去创建；Queue同样有伴生对象，也可以用模版类中的apply方法创建。
 
-```
+```scala
 // 创建队列
 val queue = new mutable.Queue[Int]()
 val queue1 = mutable.Queue(1, 2, 3)
@@ -901,7 +901,7 @@ Queue(1, 2, 3, 10)
 
 只需要加 .par
 
-```
+```scala
 val result1: immutable.IndexedSeq[Long] = (1 to 100).map(
   x => Thread.currentThread().getId
 )
