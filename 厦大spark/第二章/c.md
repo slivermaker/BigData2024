@@ -186,7 +186,7 @@ puls的函数类型是<function1>
 
 ![](https://ask.qcloudimg.com/http-save/yehe-3541135/9umslskisi.png)
 
-#### **13.3 匿名函数**
+#### **1.3 匿名函数**
 
 **1、基本介绍**
 
@@ -226,7 +226,7 @@ object AnonymouseFunctionDemo01 {
     println(f1(10, 30)) // 40
 ```
 
-#### **13.4 高阶函数(higher-order function)**
+#### **1.4 高阶函数(higher-order function)**
 
 **1、基本介绍**   能够接受函数作为参数的函数，叫做高阶函数 (higher-order function)。可使应用程序更加健壮。 **2、高阶函数基本使用案例**
 
@@ -344,7 +344,7 @@ List(2, 3, 4, 5)
 
 ![](https://ask.qcloudimg.com/http-save/yehe-3541135/ycyw1bjacd.png)
 
-#### **13.6 闭包(closure)**
+#### **1.6 闭包(closure)**
 
 **1、基本介绍**
 
@@ -458,7 +458,7 @@ object CurryDemo02 {
 输出结果如下：
 true
 true
-#### **13.8 控制抽象函数**
+#### **1.8 控制抽象函数**
 
 **1、看一个需求**
 
