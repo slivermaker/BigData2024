@@ -389,7 +389,7 @@ class Counter {
     private var privateValue = 0  //变成私有字段，并且修改字段名称
     def value = privateValue //定义一个方法，方法的名称就是原来我们想要的字段的名称
     def value_=(newValue: Int){
-        if (newValue &gt; 0) privateValue = newValue //只有提供的新值是正数，才允许修改
+        if (newValue > 0) privateValue = newValue //只有提供的新值是正数，才允许修改
     }
     def increment(step: Int): Unit = { value += step}
     def current(): Int = {value}
@@ -646,7 +646,7 @@ Scala 类的主构造器函数的形参包括三种类型
 -   var 修饰参数，作为类的成员属性使用，可以修改
 -   val 修饰参数，作为类只读属性使用，不能修改
 
-```
+```scala
 object Test_ConstructorParam {
   def main(args: Array[String]): Unit = {
     val student2 = new student2("aaron", 22)
@@ -674,11 +674,43 @@ name: ramsey, age: 28
 
   
 
-**继承**
+## 继承
+```scala
+abstract class Car{
+   val carBrand: String 
+     def info()
+     def greeting() {println("Welcome to my car!")}
+}
+class BMWCar extends Car {
+    override val carBrand = "BMW"
+    def info() {printf("This is a %s car. It is expensive.\n", carBrand)}
+    override def greeting() {println("Welcome to my BMW car!")}
+}
 
-先给出代码
+class BYDCar extends Car {
+    override val carBrand = "BYD" 
+    def info() {printf("This is a %s car. It is cheap.\n", carBrand)}
+    override def greeting() {println("Welcome to my BYD car!")}
+}
 
+object MyCar {  
+    def main(args: Array[String]){
+        val myCar1 = new BMWCar()
+        val myCar2 = new BYDCar()
+        myCar1.greeting()
+        myCar1.info()       
+        myCar2.greeting()
+        myCar2.info()
+    }
+}
 ```
+Welcome to my BMW car!
+This is a BMW caar. It is expensive.
+Welcome to my BYD car!
+This is a BYD caar. It is cheap.
+
+
+```scala
 object Test07_Inherit {
   def main(args: Array[String]): Unit = {
     val student = new Student("aaron", 22, "171717")
@@ -748,7 +780,7 @@ Scala 中属性和方法都是动态绑定，而 Java 中只有方法为动态�
 
 先看一下Java中的多态：
 
-```
+```scala
 class Person {
     int age = 20;
     public void printInfo() {
@@ -780,7 +812,7 @@ p是Person类型的引用，当前语句是指向了new出来的一个Student对
 
 Java的属性静态绑定是为了在编译期就能发现一些错误，Scala的理念中基本去除了所有静态的概念，前面文章中也提及到了Scala对变量进一步的封装，访问变量都要调用get/set方法，调用方法需要动态绑定，所以呈现出来的就是属性和方法都为动态绑定。
 
-```
+```scala
 object Test_DynamicBind {
   def main(args: Array[String]): Unit = {
     val student: Person8 = new Student8
@@ -825,7 +857,7 @@ hello student
 
 抽象类还可以声明匿名子类，实现方法如下：
 
-```
+```scala
 object Test_AnonymousClass {
   def main(args: Array[String]): Unit = {
     val person: Person = new Person {
@@ -861,7 +893,7 @@ hello aaron
 
 伴生对象提供了一个特殊的apply方法，apply方法中new了一个伴生类的实例化对象，调用apply方法时可以省略apply，写法比较简洁；apply方法可以重载。
 
-```
+```scala
 object Test_Object {
   def main(args: Array[String]): Unit = {
 ​
@@ -899,7 +931,7 @@ object Student {
 
 伴生对象实现单例设计模式
 
-```
+```scala
 object Test_Single {
   def main(args: Array[String]): Unit = {
     val stu1 = Student.getInstance()
@@ -939,7 +971,6 @@ chapter06.Student12@129a8472
 chapter06.Student12@129a8472
 ```
 
-  
 
 ## **特质 (Trait)**
 
@@ -947,7 +978,7 @@ Scala中用Trait代替了Java中的interface，可以有抽象和非抽象方法
 
 使用特质的例子：
 
-```
+```scala
 object Test_Trait {
   def main(args: Array[String]): Unit = {
     val student1 = new Student
@@ -1002,7 +1033,7 @@ student stu is studying
 
 特质的 **动态混入** 是在实例化时引入新特质，同样需要对冲突和抽象的内容进行处理。例子如下：
 
-```
+```scala
 object Test_Trait {
   def main(args: Array[String]): Unit = {
     val student1 = new Student with Talent {
@@ -1091,8 +1122,249 @@ student stu knowledge increased: 5
 -   案例中的 super，不是表示其父特质对象，而是表示上述叠加顺序中的下一个特质， 即，**MyClass** **中的** **super** **指代** **Color**，**Color** **中的** **super** **指代** **Category**，**Category** **中的** **super** **指代** **Ball**。
 -   如果想要调用某个指定的混入特质中的方法，可以增加约束:super\[\]，例如super\[Category\].describe()。
 
-  
+```scala
+trait CarId{
+  var id: Int
+    def currentId(): Int     //定义了一个抽象方法
+}
+class BYDCarId extends CarId{ //使用extends关键字
+   override var id = 10000 //BYD汽车编号从10000开始
+     def currentId(): Int = {id += 1; id} //返回汽车编号
+ }
+ class BMWCarId extends CarId{ //使用extends关键字
+   override var id = 20000 //BMW汽车编号从10000开始
+     def currentId(): Int = {id += 1; id} //返回汽车编号
+ } 
+ object MyCar { 
+    def main(args: Array[String]){
+        val myCarId1 = new BYDCarId()       
+        val myCarId2 = new BMWCarId()
+        printf("My first CarId is %d.\n",myCarId1.currentId)
+        printf("My second CarId is %d.\n",myCarId2.currentId)
+    }
+}
+```
+My first CarId is 10001.
+My second CarId is 20001.
 
+```scala
+trait CarId{
+  var id: Int
+    def currentId(): Int     //定义了一个抽象方法
+}
+trait CarGreeting{
+  def greeting(msg: String) {println(msg)}  
+}
+
+class BYDCarId extends CarId with CarGreeting{ //使用extends关键字混入第1个特质，后面可以反复使用with关键字混入更多特质
+   override var id = 10000 //BYD汽车编号从10000开始
+     def currentId(): Int = {id += 1; id} //返回汽车编号
+ }
+ class BMWCarId extends CarId with CarGreeting{ //使用extends关键字混入第1个特质，后面可以反复使用with关键字混入更多特质
+   override var id = 20000 //BMW汽车编号从10000开始
+     def currentId(): Int = {id += 1; id} //返回汽车编号
+ } 
+ object MyCar { 
+    def main(args: Array[String]){
+        val myCarId1 = new BYDCarId()       
+        val myCarId2 = new BMWCarId()
+        myCarId1.greeting("Welcome my first car.")
+        printf("My first CarId is %d.\n",myCarId1.currentId)        
+        myCarId2.greeting("Welcome my second car.")
+        printf("My second CarId is %d.\n",myCarId2.currentId)
+    }
+}
+```
+Welcome my first car.
+My first CarId is 10001.
+Welcome my second car.
+My second CarId is 20001.
+
+
+## 模式匹配
+Scala的模式匹配最常用于match语句中。下面是一个简单的整型值的匹配实例。
+
+```
+val colorNum = 1
+val colorStr = colorNum match {
+    case 1 => "red"
+    case 2 => "green"
+    case 3 => "yellow"
+    case _ => "Not Allowed" 
+} 
+println(colorStr)
+```
+
+为了测试上面代码，可以直接把上面代码放入到“/usr/local/scala/mycode/test.scala”文件中，然后，在Linux系统的Shell命令提示符状态下执行下面命令：
+
+```
+scala test.scala
+
+```
+
+
+另外，在模式匹配的case语句中，还可以使用变量。
+
+```
+val colorNum = 4
+val colorStr = colorNum match {
+    case 1 => "red"
+    case 2 => "green"
+    case 3 => "yellow"
+    case unexpected => unexpected + " is Not Allowed"   
+} 
+println(colorStr)
+```
+
+按照前面给出的方法，在test.scala文件中测试执行上述代码后会在屏幕上输出：
+
+```
+4 is Not Allowed
+```
+
+也就是说，当colorNum=4时，值4会被传递给unexpected变量。
+
+## 类型模式
+
+Scala可以对表达式的类型进行匹配。
+
+```
+for (elem <- List(9,12.3,"Spark","Hadoop",'Hello)){
+    val str  = elem match{
+        case i: Int => i + " is an int value."
+        case d: Double => d + " is a double value."
+        case "Spark"=> "Spark is found."
+        case s: String => s + " is a string value."
+        case _ => "This is an unexpected value."
+    }
+println(str)    
+}
+```
+
+在test.scala文件中测试执行上述代码后会在屏幕上输出：
+
+```
+9 is an int value.
+12.3 is a double value.
+Spark is found.
+Hadoop is a string value.
+This is an unexpected value.
+```
+
+## "守卫(guard)"语句
+
+可以在模式匹配中添加一些必要的处理逻辑。
+
+```
+for (elem <- List(1,2,3,4)){
+      elem match {
+          case _ if (elem %2 == 0) => println(elem + " is even.")
+            case _ => println(elem + " is odd.")
+    }
+}
+```
+
+上面代码中if后面条件表达式的圆括号可以不要。执行上述代码后可以得到以下输出结果：
+
+```
+1 is odd.
+2 is even.
+3 is odd.
+4 is even.
+```
+
+## for表达式中的模式
+
+我们之前在介绍“映射”的时候，实际上就已经接触过了for表达式中的模式。  
+还是以我们之前举过的映射为例子，我们创建的映射如下：
+
+```
+val university = Map("XMU" -> "Xiamen University", "THU" -> "Tsinghua University","PKU"->"Peking University")
+```
+
+循环遍历映射的基本格式是：
+
+```
+for ((k,v) <- 映射) 语句块
+```
+
+对于遍历过程得到的每个值，都会被绑定到k和v两个变量上，也就是说，映射中的“键”被绑定到变量k上，映射中的“值”被绑定到变量v上。
+
+下面给出此前已经介绍过的实例：
+
+```
+for ((k,v) <- university) printf("Code is : %s and name is: %s\n",k,v)
+```
+
+上面代码执行结果如下：
+
+```
+Code is : XMU and name is: Xiamen University
+Code is : THU and name is: Tsinghua University
+Code is : PKU and name is: Peking University
+```
+
+## case类的匹配
+
+case类是一种特殊的类，它们经过优化以被用于模式匹配。
+
+```
+case class Car(brand: String, price: Int)
+val myBYDCar = new Car("BYD", 89000)
+val myBMWCar = new Car("BMW", 1200000)
+val myBenzCar = new Car("Benz", 1500000)
+for (car <- List(myBYDCar, myBMWCar, myBenzCar)) {
+    car match{
+        case Car("BYD", 89000) => println("Hello, BYD!")
+        case Car("BMW", 1200000) => println("Hello, BMW!")
+        case Car(brand, price) => println("Brand:"+ brand +", Price:"+price+", do you want it?")        
+    }
+}
+```
+
+把上述代码放入test.scala文件中，运行“scala test.scala”命令执行后可以得到如下结果：
+
+```
+Hello, BYD!
+Hello, BMW!
+Brand: Benz, Price:1500000, do you want it?
+```
+
+## Option类型
+
+标准类库中的Option类型用case类来表示那种可能存在、也可能不存在的值。  
+一般而言，对于每种语言来说，都会有一个关键字来表示一个对象引用的是“无”，在Java中使用的是null。Scala融合了函数式编程风格，因此，当预计到变量或者函数返回值可能不会引用任何值的时候，建议你使用Option类型。Option类包含一个子类Some，当存在可以被引用的值的时候，就可以使用Some来包含这个值，例如Some("Hadoop")。而None则被声明为一个对象，而不是一个类，表示没有值。  
+下面我们给出一个实例。
+```scala
+//首先我们创建一个映射
+scala> val books=Map("hadoop"->5,"spark"->10,"hbase"->7)
+books: scala.collection.immutable.Map[String,Int] = Map(hadoop -> 5, spark -> 10, hbase -> 7)
+ 
+//下面我们从映射中取出键为"hadoop"对应的值，这个键是存在的，可以取到值，并且取到的值会被包含在Some中返回
+scala> books.get("hadoop")
+res0: Option[Int] = Some(5)
+ 
+//下面我们从映射中取出键为"hive"对应的值，这个键是不存在的，所以取到的值是None对象
+scala> books.get("hive")
+res1: Option[Int] = None
+```
+Option类型还提供了getOrElse方法，这个方法在这个Option是Some的实例时返回对应的值，而在是None的实例时返回传入的参数。例如：
+```scala
+scala> val sales=books.get("hive")
+sales: Option[Int] = None
+ 
+scala> sales.getOrElse("No Such Book")
+res3: Any = No Such Book
+ 
+scala> println(sales.getOrElse("No Such Book"))
+No Such Book
+```
+可以看出，当我们采用getOrElse方法时，如果我们取的"hive"没有对应的值，我们就可以显示我们指定的“No Such Book”，而不是显示None。
+在Scala中，使用Option的情形是非常频繁的。在Scala里，经常会用到Option[T]类型，其中的T可以是Sting或Int或其他各种数据类型。Option[T]实际上就是一个容器，我们可以把它看做是一个集合，只不过这个集合中要么只包含一个元素（被包装在Some中返回），要么就不存在元素（返回None）。既然是一个集合，我们当然可以对它使用map、foreach或者filter等方法。比如：
+```
+scala> books.get("hive").foreach(println)
+```
+可以发现，上述代码执行后，屏幕上什么都没有显示，因为，foreach遍历遇到None的时候，什么也不做，自然不会执行println操作。
 ## **扩展**
 
 **自身类型**
@@ -1119,7 +1391,7 @@ Scala的自身类型也是一个比较独特的引入，它声明当前特质或
 
 枚举类概念一定不陌生了，应用类就是继承App，不用写main方法可以直接执行，直接看代码：
 
-```
+```scala
 object WorkDay extends Enumeration {
   val Key = Value(1, "dasd12eas213j1d")
   val Token = Value(2, "12345678909876543")
