@@ -1375,8 +1375,8 @@ Scala的自身类型也是一个比较独特的引入，它声明当前特质或
 
 **类型检查和转换**
 
--   obj.isInstanceOf\[T\]:判断 obj 是不是 T 类型。
--   obj.asInstanceOf\[T\]:将 obj 强转成 T 类型。
+-   obj.isInstanceOf[T]:判断 obj 是不是 T 类型。
+-   obj.asInstanceOf[T]:将 obj 强转成 T 类型。
 -   classOf 获取对象的类名。
 
 重温一个Java的知识点：
