@@ -238,7 +238,7 @@ List 和vector对应的可变版本是ListBuffer,ArrayBuffer
 
 创建数组：
 
-第一种方法类似Java去new：val arr: Array\[Int\] = new Array\[Int\] (5)
+第一种方法类似Java去new：val arr: Array[Int] = new Array[Int] (5)
 
 第二种方法用到了Array伴生对象中写有的apply方法，在 [Scala入门学习（四）： 面向对象](https://zhuanlan.zhihu.com/p/399419869) 中进行过介绍，调用apply去new一个伴生类实例对象可以省略apply，直接写类名，然后括号内加apply方法的参数即可。
 
@@ -297,7 +297,7 @@ final class Array[T](_length: Int) extends java.io.Serializable with java.lang.C
 -   使用引入特质IndexedSeqOptimized的foreach方法，参数为匿名函数，声明要执行的操作。
 -   使用引入特质Traversable的mkString方法将集合转化为字符串，需要传参集合中每个元素分开的分隔符。
 
-```
+```scala
 // 方法一
 for (i <- 0 until arr1.length) println(arr1(i))
 ​
@@ -598,7 +598,7 @@ university2("XMU") = "Ximan University" //更新已有元素的值
 university2("FZU") = "Fuzhou University" //添加新元素
 
 university2 + = ("TJU"->"Tianjin University") //添加一个新元素
-university2 + = ("SDU"->"Shandong University","WHU"->"Wuhan University") //同时添加两个新元素
+university2 ++= ("SDU"->"Shandong University","WHU"->"Wuhan University") //同时添加两个新元素
 ```
 
 **Set**
