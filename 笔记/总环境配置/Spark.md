@@ -326,7 +326,7 @@ vim pom.xml
 
 在pom.xml文件中添加内容如下，声明该独立应用程序的信息以及与Spark的依赖关系：
 
-```
+```xml
 
 <!-- <project>
     <groupId>cn.edu.xmu</groupId>
@@ -485,7 +485,7 @@ vim pom.xml
 
 然后，在pom.xml文件中添加如下内容，用来声明该独立应用程序的信息以及与Spark的依赖关系：
 
-```
+```xml
 <!-- 
 <project>
     <groupId>cn.edu.xmu</groupId>
