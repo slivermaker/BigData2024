@@ -1,0 +1,5 @@
+Movie ID: 1357, Movie Name: Shine
+Movie ID: 1357, Movie Name: Shine
+Movie ID: 1432, Movie Name: Metro
+Movie ID: 1487, Movie Name: Selena
+Movie ID: 3320, Movie Name: Mifune

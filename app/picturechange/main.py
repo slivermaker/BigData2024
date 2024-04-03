@@ -1,42 +1,85 @@
+import random
+import time
+import pymysql
 import requests
-from bs4 import BeautifulSoup
+import json
+from urllib.parse import quote
+from fake_useragent import UserAgent
 
 
-def get_movie_cover(movie_name):
-    # 设置请求头部信息
+# 代理地址
+proxy = "39.105.5.126:80"
+
+# 你要访问的网址
+
+# 设置代理
+proxies = {
+    "http": proxy,
+    "https": proxy,
+}
+
+
+# 创建一个 UserAgent 对象
+ua = UserAgent()
+
+# 连接数据库
+conn = pymysql.connect(
+    host="localhost",
+    user="root",
+    password="yyz999",
+    database="movierecommend",
+    charset="utf8mb4",
+    cursorclass=pymysql.cursors.DictCursor,
+)
+
+# 创建游标对象
+cursor = conn.cursor()
+
+# 查询数据库中的电影名称
+query = "SELECT movieid, moviename FROM movieinfo"
+cursor.execute(query)
+movies = cursor.fetchall()
+
+# 循环遍历每个电影名称，并爬取更新结果
+for i, movie in enumerate(movies):
+    if movie["movieid"] < 3360:
+        continue
+    time.sleep(random.uniform(0.5, 0.84))  # 随机等待时间是1秒和3秒之间的一个小数
+    print(i)
+    movie_id = movie["movieid"]
+    movie_name = movie["moviename"]
+    word = quote(movie_name)
+    url = "https://m.douban.com/rexxar/api/v2/search?q=" + word
+
+    # 随机选择一个用户代理
+    user_agent = ua.random
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
+        "User-Agent": user_agent,
+        "Cookie": 'gr_user_id=fdb73cc0-fc7c-4d60-985b-37ab95a27023; ll="118276"; bid=NrunAJduIaE; _pk_id.100001.8cb4=4c68efb87d78c2ba.1691981945.; __yadk_uid=zbS41td7KwOxLg5ZD6LPqc1PhAhdagRi; viewed="36142067_35926998_34917990_34782257_33437381_34998671_36104107_26317662_35863224_6047742"; ap_v=0,6.0',
+        "Referer": "https://www.douban.com/search?q=" + word,
     }
 
-    # 构造TMDB电影搜索的URL
-    search_url = f"https://www.themoviedb.org/search?query={movie_name}"
+    # 发送请求获取数据
+    try:
+        response = requests.get(url=url, headers=headers)
+        response.encoding = "utf-8"
+        res = json.loads(response.text).get("subjects", {}).get("items", [])
+        if res:
+            cover_url = res[0]["target"]["cover_url"]
 
-    # 发送HTTP请求
-    response = requests.get(search_url, headers=headers)
-    response.raise_for_status()  # 检查请求是否成功
+            # 更新数据库中的图片链接
+            update_query = "UPDATE movieinfo SET picture = %s WHERE movieid = %s"
+            cursor.execute(update_query, (cover_url, movie_id))
+            conn.commit()
+            print(movie)
+    except KeyError:
+        # 如果没有 'subjects' 键，将电影的 ID 和名称写入到 no.txt 文件中
+        with open("no.txt", "a", encoding="utf-8") as f:
+            f.write(f"Movie ID: {movie_id}, Movie Name: {movie_name}\n")
+        continue
+    except Exception as e:
+        print(f"An error occurred for movie: {movie_name}, Error: {e}")
 
-    # 使用 BeautifulSoup 解析HTML内容
-    soup = BeautifulSoup(response.text, "html.parser")
-
-    # 获取搜索结果中第一个电影的链接
-    movie_link = soup.select_one(".result a")["href"]
-
-    # 访问电影详情页面
-    movie_response = requests.get(
-        "https://www.themoviedb.org" + movie_link, headers=headers
-    )
-    movie_response.raise_for_status()  # 检查请求是否成功
-
-    # 使用 BeautifulSoup 解析电影详情页面的HTML内容
-    movie_soup = BeautifulSoup(movie_response.text, "html.parser")
-
-    # 获取电影封面图片链接
-    cover_link = movie_soup.find("img", class_="poster")["src"]
-
-    return cover_link
-
-
-# 测试获取电影封面图片链接
-movie_name = "Toy Story"
-cover_link = get_movie_cover(movie_name)
-print("电影封面链接:", cover_link)
+# 关闭游标和连接
+cursor.close()
+conn.close()
