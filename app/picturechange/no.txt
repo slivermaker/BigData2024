@@ -1,0 +1,24 @@
+Movie ID: 1357, Movie Name: Shine
+Movie ID: 1432, Movie Name: Metro
+Movie ID: 1357, Movie Name: Shine
+Movie ID: 1432, Movie Name: Metro
+Movie ID: 1487, Movie Name: Selena
+Movie ID: 1357, Movie Name: Shine
+Movie ID: 1432, Movie Name: Metro
+Movie ID: 1487, Movie Name: Selena
+Movie ID: 1357, Movie Name: Shine
+Movie ID: 1432, Movie Name: Metro
+Movie ID: 1487, Movie Name: Selena
+Movie ID: 1776, Movie Name: Ride
+Movie ID: 2199, Movie Name: Phoenix
+Movie ID: 2573, Movie Name: Tango
+Movie ID: 2573, Movie Name: Tango
+Movie ID: 2573, Movie Name: Tango
+Movie ID: 2677, Movie Name: Buena Vista Social Club
+Movie ID: 2677, Movie Name: Buena Vista Social Club
+Movie ID: 2677, Movie Name: Buena Vista Social Club
+Movie ID: 2677, Movie Name: Buena Vista Social Club
+Movie ID: 2677, Movie Name: Buena Vista Social Club
+Movie ID: 2677, Movie Name: Buena Vista Social Club
+Movie ID: 2904, Movie Name: Rain
+Movie ID: 3320, Movie Name: Mifune

@@ -7,18 +7,6 @@ from urllib.parse import quote
 from fake_useragent import UserAgent
 
 
-# 代理地址
-proxy = "39.105.5.126:80"
-
-# 你要访问的网址
-
-# 设置代理
-proxies = {
-    "http": proxy,
-    "https": proxy,
-}
-
-
 # 创建一个 UserAgent 对象
 ua = UserAgent()
 
@@ -36,16 +24,16 @@ conn = pymysql.connect(
 cursor = conn.cursor()
 
 # 查询数据库中的电影名称
-query = "SELECT movieid, moviename FROM movieinfo"
+query = "SELECT movieid, moviename,picture FROM movieinfo"
 cursor.execute(query)
 movies = cursor.fetchall()
 
 # 循环遍历每个电影名称，并爬取更新结果
 for i, movie in enumerate(movies):
-    if movie["movieid"] < 3360:
+    if movie["movieid"] < 2930 or "qnmob3" in movie["picture"]:
         continue
-    time.sleep(random.uniform(0.5, 0.84))  # 随机等待时间是1秒和3秒之间的一个小数
-    print(i)
+    # time.sleep(random.uniform(8.4, 12.4))  # 随机等待时间是1秒和3秒之间的一个小数
+    print(movie["movieid"])
     movie_id = movie["movieid"]
     movie_name = movie["moviename"]
     word = quote(movie_name)
@@ -71,7 +59,7 @@ for i, movie in enumerate(movies):
             update_query = "UPDATE movieinfo SET picture = %s WHERE movieid = %s"
             cursor.execute(update_query, (cover_url, movie_id))
             conn.commit()
-            print(movie)
+            print(movie["picture"])
     except KeyError:
         # 如果没有 'subjects' 键，将电影的 ID 和名称写入到 no.txt 文件中
         with open("no.txt", "a", encoding="utf-8") as f:
