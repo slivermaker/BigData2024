@@ -360,7 +360,7 @@ object SparkWriteMySQL {
 
 这里以一个简单实例阐述DataFrame、DataSet和RDD的区别。
 
-    ![](imge/md-20240319201004.png)
+![](imge/md-20240319201004.png)
 RDD、DataFrame和DataSet都是不可变的、具有分区的数据集。在模式（Schema）方面，DataFrame和DataSet都具有一定的模式，而RDD则不具有模式。在查询优化器方面，DataFrame和DataSet都可以使用Spark SQL优化过的执行引擎，能够提前对查询计划进行优化（如图6-18所示），而RDD则不具备查询优化能力。在API级别方面，RDD提供了较为底层的API，而DataFrame和DataSet都是高层次的API，二者的底层都是基于RDD实现的。在类型安全方面，RDD和DataSet都是类型安全的，而DataFrame并不是类型安全的。在检测语法错误方面，三者都是在编译时检测。在检测分析错误方面，DataFrame是在运行时检测，而RDD和DataSet则是在编译时检测。
 ![](imge/md-20240319201057.png)
 
