@@ -1,17 +1,29 @@
 
 
 ## 启动与停止MySQL服务：
+
 启动
+
 sudo /etc/init.d/mysqlstart
+
 或者
+
 sudo service mysqlstart
+
 停止
+
 sudo /etc/init.d/mysqlstop
+
 或者
+
 sudo service mysqlstop
+
 重启
+
 sudo service mysqlrestart
+
 查看状态
+
 sudo/etc/init.d/mysqlstatus
 
 ## 验证是否安装成功与连接
@@ -33,27 +45,27 @@ status;
 
 ```sql
 #查看当前有哪些数据库
-showdatabases;
+show databases;
 #使用名为test的数据库
-usetest;
+use test;
 #创建一张学生表
-createtablestu(
+create table stu(
 id int(10), name varchar(20),
-ageint(10),
+age int(10),
 primary key(id));
 #每一张表都需要包含一个主键，主键唯一标识一条记录，唯一的字段，不可重复不能为空，通过`primary key`关键字来定义。
 #查看创建好的表
-showcreatetablestu;
+show create table stu;
 #新加一个字段
-alter tablestu add column gender varchar(20);
+alter table stu add column gender varchar(20);
 #修改一个字段
-alter tablestumodify column gender varchar(40);
+alter table stu modify column gender varchar(40);
 #删除一个字段
-alter tablestu drop column gender;
+alter table stu drop column gender;
 #删除表
-drop tablestu;
+drop table stu;
 #查看当前数据库中的表
-showtables;
+show tables;
 #向表中插入数据
 insert into stu(id,name,age) values(1,'pw',28);
 #插入全部字段时可以只写表名
@@ -148,7 +160,7 @@ REVOKE： 取消用户的操作权限
 
 **2、创建表(CREATE)**
 
-```text
+```sql
 CREATE TABLE Product (product_id CHAR(4) NOT NULL, product_name VARCHAR(100) NOT NULL, product_type VARCHAR(32) NOT NULL, sale_price INTEGER , purchase_price INTEGER , regist_date DATE , PRIMARY KEY (product_id));
 ```
 
@@ -166,19 +178,19 @@ CREATE TABLE Product (product_id CHAR(4) NOT NULL, product_name VARCHAR(100) NOT
 
 -   在表中增加一列(ADD COLUMN)
 
-```text
+```sql
 ALTER TABLE Product ADD COLUMN product_name_pinyin VARCHAR(100);
 ```
 
 -   在表中删除一列(DROP COLUMN)
 
-```text
+```sql
 ALTER TABLE Product DROP COLUMN product_name_pinyin;
 ```
 
 -   变更表名(RENAME)
 
-```text
+```sql
 RENAME TABLE Poduct to Product;
 ```
 
@@ -188,14 +200,23 @@ RENAME TABLE Poduct to Product;
 
 -   包含列清单
 
-```text
+```sql
 INSERT INTO Product (product_id, product_name, product_type, sale_price, purchase_price, regist_date) VALUES ('0001', 'T恤衫', '衣服', 1000, 500, '2009-09-20');
 ```
 
 -   省略列清单
 
-```text
-START TRANSACTION; INSERT INTO Product VALUES ('0001', 'T恤衫', '衣服', 1000, 500, '2009-09-20'); INSERT INTO Product VALUES ('0002', '打孔器', '办公用品', 500, 320, '2009-09-11'); INSERT INTO Product VALUES ('0003', '运动T恤', '衣服', 4000, 2800, NULL); INSERT INTO Product VALUES ('0004', '菜刀', '厨房用具', 3000, 2800, '2009-09-20'); INSERT INTO Product VALUES ('0005', '高压锅', '厨房用具', 6800, 5000, '2009-01-15'); INSERT INTO Product VALUES ('0006', '叉子', '厨房用具', 500, NULL, '2009-09-20'); INSERT INTO Product VALUES ('0007', '擦菜板', '厨房用具', 880, 790, '2008-04-28'); INSERT INTO Product VALUES ('0008', '圆珠笔', '办公用品', 100, NULL,'2009-11-11'); COMMIT;
+```sql
+START TRANSACTION; 
+INSERT INTO Product VALUES ('0001', 'T恤衫', '衣服', 1000, 500, '2009-09-20');
+INSERT INTO Product VALUES ('0002', '打孔器', '办公用品', 500, 320, '2009-09-11');
+INSERT INTO Product VALUES ('0003', '运动T恤', '衣服', 4000, 2800, NULL);
+INSERT INTO Product VALUES ('0004', '菜刀', '厨房用具', 3000, 2800, '2009-09-20'); 
+INSERT INTO Product VALUES ('0005', '高压锅', '厨房用具', 6800, 5000, '2009-01-15'); 
+INSERT INTO Product VALUES ('0006', '叉子', '厨房用具', 500, NULL, '2009-09-20'); 
+INSERT INTO Product VALUES ('0007', '擦菜板', '厨房用具', 880, 790, '2008-04-28'); 
+INSERT INTO Product VALUES ('0008', '圆珠笔', '办公用品', 100, NULL,'2009-11-11'); 
+COMMIT;
 ```
 
 -   从其他表中复制数据
