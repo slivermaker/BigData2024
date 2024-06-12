@@ -106,70 +106,69 @@ SQL: Structured Query Language，操作[关系型数据库](https://so.csdn.net/
 
 **相关查询的练习**
 
-```
-<span><span></span><span>-- ============================= 内连接 =============================
-</span></span><span><span></span><span>-- A. 查询员工的姓名 , 及所属的部门名称 (隐式内连接实现)
-</span></span><span><span></span><span>SELECT tb_emp.`name`as 姓名,tb_dept.`name` AS 部门 FROM tb_emp,tb_dept WHERE tb_emp.dept_id=tb_dept.id
-</span></span><span><span></span><span>
-</span></span><span><span></span><span>-- B. 查询员工的姓名 , 及所属的部门名称 (显式内连接实现)
-</span></span><span><span></span><span>SELECT tb_emp.`name`as 姓名,tb_dept.`name` AS 部门 FROM
-</span></span><span><span></span><span>tb_emp INNER JOIN tb_dept on tb_emp.dept_id=tb_dept.id
-</span></span><span><span></span><span>
-</span></span><span><span></span><span>-- =============================== 外连接 ============================
-</span></span><span><span></span><span>-- A. 查询员工表 所有 员工的姓名, 和对应的部门名称 (左外连接)
-</span></span><span><span></span><span>SELECT tb_emp.`name` AS 姓名,tb_dept.`name` AS 部门 FROM 
-</span></span><span><span></span><span>tb_emp LEFT JOIN tb_dept ON tb_emp.dept_id=tb_dept.id
-</span></span><span><span></span><span>
-</span></span><span><span></span><span>-- B. 查询部门表 所有 部门的名称, 和对应的员工名称 (右外连接)
-</span></span><span><span></span><span>SELECT tb_emp.`name` AS 姓名,tb_dept.`name` AS 部门 FROM 
-</span></span><span><span></span><span>tb_emp RIGHT JOIN tb_dept ON tb_emp.dept_id=tb_dept.id
-</span></span><span><span></span><span>
-</span></span><span><span></span><span>-- ========================= 子查询 ================================
-</span></span><span><span></span><span>-- 标量子查询
-</span></span><span><span></span><span>-- A. 查询 "教研部" 的所有员工信息
-</span></span><span><span></span><span>SELECT * FROM tb_emp WHERE tb_emp.dept_id=(
-</span></span><span><span></span><span>SELECT tb_dept.id FROM tb_dept WHERE tb_dept.`name`='教研部' )
-</span></span><span><span></span><span>
-</span></span><span><span></span><span>-- B. 查询在 "方东白" 入职之后的员工信息
-</span></span><span><span></span><span>SELECT * FROM tb_emp WHERE entrydate&gt;(SELECT entrydate FROM
-</span></span><span><span></span><span>tb_emp WHERE `name`='方东白'
-</span></span><span><span></span><span>)
-</span></span><span><span></span><span>
-</span></span><span><span></span><span>-- 列子查询
-</span></span><span><span></span><span>-- A. 查询 "教研部" 和 "咨询部" 的所有员工信息
-</span></span><span><span></span><span>SELECT * FROM tb_emp WHERE dept_id in (SELECT id FROM tb_dept WHERE `name`in ('教研部','咨询部'))
-</span></span><span><span></span><span>
-</span></span><span><span></span><span>-- 行子查询
-</span></span><span><span></span><span>-- A. 查询与 "韦一笑" 的入职日期 及 职位都相同的员工信息 ;
-</span></span><span><span></span><span>SELECT * FROM tb_emp WHERE (entrydate=(SELECT entrydate FROM tb_emp WHERE `name`='韦一笑') and job =(SELECT job FROM tb_emp WHERE  `name`='韦一笑'))
-</span></span><span><span></span><span>
-</span></span><span><span></span><span>-- 表子查询
-</span></span><span><span></span><span>-- A. 查询入职日期是 "2006-01-01" 之后的员工信息 , 及其部门信息
-</span></span><span><span></span><span>SELECT tb_emp.*,tb_dept.* FROM tb_emp LEFT JOIN tb_dept ON tb_emp.dept_id=tb_dept.id
-</span></span><span><span></span><span> WHERE tb_emp.entrydate&gt;'2006-01-01' 
-</span></span><span><span></span><span>
-</span></span><span><span></span><span>-- 1. 查询价格低于 10元 的菜品的名称 、价格 及其 菜品的分类名称 .
-</span></span><span><span></span><span>SELECT dish.`name`,dish.price ,category.`name` as 分类 FROM dish,category WHERE dish.price&lt;10 AND category.id=dish.category_id
-</span></span><span><span></span><span>
-</span></span><span><span></span><span>-- 2. 查询所有价格在 10元(含)到50元(含)之间 且 状态为'起售'的菜品名称、价格 及其 菜品的分类名称 (即使菜品没有分类 , 也需要将菜品查询出来).
-</span></span><span><span></span><span>SELECT dish.`name`,dish.price,category.`name` FROM dish LEFT JOIN category ON category.id=dish.category_id
-</span></span><span><span></span><span>WHERE price BETWEEN 10 and 50  and dish.`status`=1 
-</span></span><span><span></span><span>
-</span></span><span><span></span><span>-- 3. 查询每个分类下最贵的菜品, 展示出分类的名称、最贵的菜品的价格 .
-</span></span><span><span></span><span>SELECT category.`name`,MAX(dish.price) AS 最贵的 FROM dish,category WHERE dish.category_id=category.id GROUP BY category.`name`
-</span></span><span><span></span><span>
-</span></span><span><span></span><span>-- 4. 查询各个分类下 状态为 '起售' , 并且 该分类下菜品总数量大于等于3 的 分类名称 .
-</span></span><span><span></span><span>SELECT category.`name`,COUNT(*)FROM dish,category WHERE category.`status`=1 AND dish.category_id=category.id  
-</span></span><span><span></span><span>GROUP BY category.`name` HAVING count(*)&gt;=3
-</span></span><span><span></span><span>
-</span></span><span><span></span><span>-- 5. 查询出 "商务套餐A" 中包含了哪些菜品 （展示 出套餐名称、价格, 包含的菜品名称、价格、份数）.
-</span></span><span><span></span><span>SELECT dish.`name`,dish.price ,setmeal_dish.copies,setmeal.`name` ,setmeal.price FROM dish ,setmeal,setmeal_dish WHERE 
-</span></span><span><span></span><span> setmeal_dish.dish_id=dish.id and setmeal_dish.setmeal_id=setmeal.id AND setmeal.`name`='商务套餐A' 
-</span></span><span><span></span><span>
-</span></span><span><span></span><span>-- 6. 查询出低于菜品平均价格的菜品信息 (展示出菜品名称、菜品价格).
-</span></span><span><span></span><span>SELECT dish.`name`,dish.price FROM dish WHERE dish.price &lt; (SELECT AVG(price) FROM dish)
-</span></span><span><span></span><span>
-</span></span>
+```sql
+-- ============================= 内连接 =============================
+-- A. 查询员工的姓名 , 及所属的部门名称 (隐式内连接实现)
+SELECT tb_emp.`name`as 姓名,tb_dept.`name` AS 部门 FROM tb_emp,tb_dept WHERE tb_emp.dept_id=tb_dept.id
+
+-- B. 查询员工的姓名 , 及所属的部门名称 (显式内连接实现)
+SELECT tb_emp.`name`as 姓名,tb_dept.`name` AS 部门 FROM
+tb_emp INNER JOIN tb_dept on tb_emp.dept_id=tb_dept.id
+
+-- =============================== 外连接 ============================
+-- A. 查询员工表 所有 员工的姓名, 和对应的部门名称 (左外连接)
+SELECT tb_emp.`name` AS 姓名,tb_dept.`name` AS 部门 FROM 
+tb_emp LEFT JOIN tb_dept ON tb_emp.dept_id=tb_dept.id
+
+-- B. 查询部门表 所有 部门的名称, 和对应的员工名称 (右外连接)
+SELECT tb_emp.`name` AS 姓名,tb_dept.`name` AS 部门 FROM 
+tb_emp RIGHT JOIN tb_dept ON tb_emp.dept_id=tb_dept.id
+
+-- ========================= 子查询 ================================
+-- 标量子查询
+-- A. 查询 "教研部" 的所有员工信息
+SELECT * FROM tb_emp WHERE tb_emp.dept_id=(
+SELECT tb_dept.id FROM tb_dept WHERE tb_dept.`name`='教研部' )
+
+-- B. 查询在 "方东白" 入职之后的员工信息
+SELECT * FROM tb_emp WHERE entrydate>(SELECT entrydate FROM
+tb_emp WHERE `name`='方东白'
+)
+
+-- 列子查询
+-- A. 查询 "教研部" 和 "咨询部" 的所有员工信息
+SELECT * FROM tb_emp WHERE dept_id in (SELECT id FROM tb_dept WHERE `name`in ('教研部','咨询部'))
+
+-- 行子查询
+-- A. 查询与 "韦一笑" 的入职日期 及 职位都相同的员工信息 ;
+SELECT * FROM tb_emp WHERE (entrydate=(SELECT entrydate FROM tb_emp WHERE `name`='韦一笑') and job =(SELECT job FROM tb_emp WHERE  `name`='韦一笑'))
+
+-- 表子查询
+-- A. 查询入职日期是 "2006-01-01" 之后的员工信息 , 及其部门信息
+SELECT tb_emp.*,tb_dept.* FROM tb_emp LEFT JOIN tb_dept ON tb_emp.dept_id=tb_dept.id
+ WHERE tb_emp.entrydate>'2006-01-01' 
+
+-- 1. 查询价格低于 10元 的菜品的名称 、价格 及其 菜品的分类名称 .
+SELECT dish.`name`,dish.price ,category.`name` as 分类 FROM dish,category WHERE dish.price<10 AND category.id=dish.category_id
+
+-- 2. 查询所有价格在 10元(含)到50元(含)之间 且 状态为'起售'的菜品名称、价格 及其 菜品的分类名称 (即使菜品没有分类 , 也需要将菜品查询出来).
+SELECT dish.`name`,dish.price,category.`name` FROM dish LEFT JOIN category ON category.id=dish.category_id
+WHERE price BETWEEN 10 and 50  and dish.`status`=1 
+
+-- 3. 查询每个分类下最贵的菜品, 展示出分类的名称、最贵的菜品的价格 .
+SELECT category.`name`,MAX(dish.price) AS 最贵的 FROM dish,category WHERE dish.category_id=category.id GROUP BY category.`name`
+
+-- 4. 查询各个分类下 状态为 '起售' , 并且 该分类下菜品总数量大于等于3 的 分类名称 .
+SELECT category.`name`,COUNT(*)FROM dish,category WHERE category.`status`=1 AND dish.category_id=category.id  
+GROUP BY category.`name` HAVING count(*)>=3
+
+-- 5. 查询出 "商务套餐A" 中包含了哪些菜品 （展示 出套餐名称、价格, 包含的菜品名称、价格、份数）.
+SELECT dish.`name`,dish.price ,setmeal_dish.copies,setmeal.`name` ,setmeal.price FROM dish ,setmeal,setmeal_dish WHERE 
+ setmeal_dish.dish_id=dish.id and setmeal_dish.setmeal_id=setmeal.id AND setmeal.`name`='商务套餐A' 
+
+-- 6. 查询出低于菜品平均价格的菜品信息 (展示出菜品名称、菜品价格).
+SELECT dish.`name`,dish.price FROM dish WHERE dish.price < (SELECT AVG(price) FROM dish)
+
 ```
 
 ### 据库优化
