@@ -1,3 +1,4 @@
+[TOC]
 Spark在借鉴Hadoop MapReduce优点的同时，很好地解决了MapReduce所面临的问题
 
 相比于Hadoop MapReduce，Spark主要具有如下优点：

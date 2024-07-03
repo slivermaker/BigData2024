@@ -84,7 +84,6 @@ ___
 
 1、Hive的概念及架构
 
-                          [点我返回目录](https://blog.csdn.net/dazuo_001/article/details/120143603#a)
 
         Hive 是建立在 [Hadoop](https://so.csdn.net/so/search?q=Hadoop&spm=1001.2101.3001.7020) 上的`数据仓库`基础构架。它提供了一系列的工具，可以用来进行数据提取转化加载（ETL ），这是一种可以存储、查询和分析存储在 Hadoop 中的大规模数据的机制。Hive 定义了简单的类 SQL 查询语言，称为 HQL ，它允许熟悉 SQL 的用户查询数据。同时，这个语言也允许熟悉 MapReduce 的开发者开发自定义的 mapper 和 reducer 来处理内建的 mapper 和 reducer 无法完成的复杂的分析工作。**Hive是SQL解析引擎**，它将SQL语句转译成Map/Reduce Job然后在Hadoop执行。**Hive的表其实就是HDFS的目录**，按表名把文件夹分开。如果是分区表，则分区值是子文件夹，可以直接在Map/Reduce Job里使用这些数据。**Hive相当于hadoop的客户端工具**，部署时不一定放在集群管理节点中，也可以放在某个节点上。
 
@@ -99,7 +98,7 @@ ___
 
 2、Hive与传统数据库比较
 
-                          [点我返回目录](https://blog.csdn.net/dazuo_001/article/details/120143603#a)
+
 
 | 查询语言 | HiveQL | SQL |
 | --- | --- | --- |

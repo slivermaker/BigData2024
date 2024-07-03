@@ -4,6 +4,10 @@
 
 ___
 
+[TOC]
+
+
+
 ## **Kafka 创建背景**
 
 **Kafka** 是一个消息系统，原本开发自 LinkedIn，用作 LinkedIn 的活动流（Activity Stream）和运营数据处理管道（Pipeline）的基础。现在它已被[多家不同类型的公司](https://link.zhihu.com/?target=https%3A//cwiki.apache.org/confluence/display/KAFKA/Powered%2BBy) 作为多种类型的数据管道和消息系统使用。

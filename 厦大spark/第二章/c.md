@@ -1,3 +1,4 @@
+[TOC]
 # 函数式编程基础
 https://cloud.tencent.com/developer/article/1411303
 定义函数最通用的方法是作为某个类或者对象的成员，这种函数被称为方法，其定义的基本语法为

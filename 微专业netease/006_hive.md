@@ -9,13 +9,13 @@
                 Flink Table & SQL
                 Presto：支持SQL，基于内存，通常集成Presto和Hive
                 Impala
-						 
+
 一、什么是Hive？特点
 
 	1、Hive是一个翻译器，默认（Hive on MR）：把SQL语句----> MapReduce程序
-
+	
 	2、Hive是一个基于HDFS之上的数据仓库
-
+	
 		Hive		HDFS
 		表   -----> 目录
 		分区 -----> 目录
@@ -32,7 +32,7 @@
 	设置环境变量: vi ~/.bash_profile
 		HIVE_HOME=/root/training/apache-hive-2.3.0-bin
 		export HIVE_HOME
-
+	
 		PATH=$HIVE_HOME/bin:$PATH
 		export PATH
 	source ~/.bash_profile
@@ -49,12 +49,12 @@
 					<name>javax.jdo.option.ConnectionURL</name>
 					<value>jdbc:derby:;databaseName=metastore_db;create=true</value>
 				  </property>
-
+	
 				  <property>
 					<name>javax.jdo.option.ConnectionDriverName</name>
 					<value>org.apache.derby.jdbc.EmbeddedDriver</value>
 				  </property>
-
+	
 				  <property>
 					<name>hive.metastore.local</name>
 					<value>true</value>
@@ -77,7 +77,7 @@
 		搭建MySQL数据库：参考PPT
 			tar -xvf mysql-5.7.19-1.el7.x86_64.rpm-bundle.tar
 			把MySQL的Driver放到Hive的lib目录
-
+	
 		重新配置hive-site.xml
 		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 		<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
@@ -86,12 +86,12 @@
 			<name>javax.jdo.option.ConnectionURL</name>
 			<value>jdbc:mysql://localhost:3306/hive?useSSL=false</value>
 		  </property>		
-
+	
 		  <property>
 			<name>javax.jdo.option.ConnectionDriverName</name>
 			<value>com.mysql.jdbc.Driver</value>
 		  </property>
-
+	
 		  <property>
 			<name>javax.jdo.option.ConnectionUserName</name>
 			<value>hiveowner</value>
@@ -101,14 +101,16 @@
 			<name>javax.jdo.option.ConnectionPassword</name>
 			<value>Welcome_1</value>
 		  </property>
-
+	
 		</configuration>	
-	
-	
+
+
+​	
 		初始化MetaStore：schematool -dbType mysql -initSchema
-		
-		
-	
+
+
+​		
+​	
 四、（重点）Hive的数据模型：表结构
 
 	1、内部表：最简单一种表，相当于是MySQL、Oracle中表
@@ -141,26 +143,30 @@
 			comm int,
 			deptno int)
 			row format delimited fields terminated by ',';		
-
+	
 		创建部门表 dept
 			create table dept
 			(deptno int,dname string,loc string)
 			row format delimited fields terminated by ',';
-
+	
 			load data inpath '/scott/dept.csv' into table dept;		
-	
-	
+
+
+​	
 	2、外部表
 ![](imge/md-20240524151537.png)
 
-		create external table student_ex
-		(sid int,sname string,age int)
-		row format delimited fields terminated by ','
-		location '/students';
-	
-	
+```sql
+	create external table student_ex
+	(sid int,sname string,age int)
+	row format delimited fields terminated by ','
+	location '/students';
+```
+
+
+​	
 ![](imge/md-20240524150551.png)
-	3、分区表：（问题）如何判断SQL的执行效率得到了提高？
+​	3、分区表：（问题)如何判断SQL的执行效率得到了提高？
 
 		创建一张分区表，按照员工的部门号建立分区
 			create table emp_part
@@ -194,7 +200,7 @@
 			deptno int)
 			clustered by (job) into 4 buckets
 			row format delimited fields terminated by ',';
-
+	
 		通过一个子查询往桶表中，插入数据
 			insert into table emp_bucket select * from emp1;
 			
@@ -210,7 +216,7 @@
 			select dept.dname,emp1.ename
 			from dept,emp1
 			where dept.deptno=emp1.deptno;
-	
+
 五、执行Hive的查询（HQL）：就是SQL
 
 	1、查询所有的员工信息
